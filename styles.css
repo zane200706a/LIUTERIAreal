@@ -1,0 +1,1355 @@
+/* ========================================
+   Liuteria Artigianale — Stylesheet
+   Palette: violin varnish inspired
+   ======================================== */
+
+/* --- Reset --- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #F0E6D8;
+  background-color: #1A1714;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  line-height: 1.15;
+  color: #FFF8F0;
+}
+
+/* --- Layout --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+/* --- Header --- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 24px 0;
+  background: linear-gradient(to bottom, #1A1714 60%, transparent);
+  transition: padding 0.3s ease;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 24px;
+  }
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #FFF8F0;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-links a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #9A8E7F;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: #FFF8F0;
+}
+
+.nav-links a:focus-visible {
+  outline: 1px solid #C8944A;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* --- Language Toggle --- */
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid #3A3530;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: border-color 0.25s ease;
+}
+
+.lang-toggle:hover {
+  border-color: #C8944A;
+}
+
+.lang-toggle:focus-visible {
+  outline: 1px solid #C8944A;
+  outline-offset: 2px;
+}
+
+.lang-active {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #C8944A;
+  letter-spacing: 0.05em;
+}
+
+.lang-inactive {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #3A3530;
+  letter-spacing: 0.05em;
+}
+
+/* --- Hero --- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, #5C3A1E 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 30% 50%, #3D2B1F 0%, transparent 60%),
+    radial-gradient(ellipse 70% 70% at 70% 45%, #6B4423 0%, transparent 65%),
+    linear-gradient(180deg, #1A1714 0%, #1E1A15 50%, #1A1714 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 800px;
+}
+
+.hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #C8944A;
+  margin-bottom: 32px;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 300;
+  color: #FFF8F0;
+  margin-bottom: 32px;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #C8944A;
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #9A8E7F;
+  max-width: 560px;
+  margin: 0 auto 48px;
+}
+
+.hero-cta {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFF8F0;
+  text-decoration: none;
+  padding: 16px 40px;
+  border: 1px solid #C8944A;
+  transition: all 0.3s ease;
+}
+
+.hero-cta:hover {
+  background-color: #C8944A;
+  color: #1A1714;
+}
+
+.hero-cta:focus-visible {
+  outline: 2px solid #FFF8F0;
+  outline-offset: 4px;
+}
+
+.hero-line {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, #C8944A 0%, transparent 100%);
+}
+
+/* --- Section --- */
+.section {
+  padding: 160px 0;
+}
+
+.section-dark {
+  background-color: #1E1A15;
+}
+
+.section-label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C8944A;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  margin-bottom: 64px;
+  max-width: 600px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: #C8944A;
+}
+
+/* --- About --- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.about-details p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #B8AA9A;
+}
+
+.about-details p br {
+  display: block;
+  content: '';
+  margin-top: 1em;
+}
+
+/* --- Divider --- */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 0 48px;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #3A3530, transparent);
+}
+
+.divider-icon {
+  width: 24px;
+  height: 36px;
+  color: #C8944A;
+  opacity: 0.4;
+}
+
+/* --- Instruments --- */
+.instruments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+@media (max-width: 900px) {
+  .instruments-grid {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+}
+
+.instrument-card {
+  border-top: 1px solid #2E2A25;
+  padding-top: 32px;
+  transition: border-color 0.3s ease;
+}
+
+.instrument-card:hover {
+  border-top-color: #C8944A;
+}
+
+.instrument-visual {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Custom violin shapes using gradients to mimic instrument silhouette */
+.instrument-visual.violin {
+  background:
+    radial-gradient(ellipse 40% 50% at 50% 30%, #3D2B1F 0%, transparent 70%),
+    linear-gradient(to bottom, #2E2A25 0%, #1E1A15 100%);
+}
+
+.instrument-visual.violin::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 30% 60% at 50% 25%, rgba(200, 148, 74, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 25% 55% at 50% 70%, rgba(200, 148, 74, 0.1) 0%, transparent 55%);
+}
+
+.instrument-visual.viola {
+  background:
+    radial-gradient(ellipse 45% 50% at 50% 30%, #3D2B1F 0%, transparent 70%),
+    linear-gradient(to bottom, #2E2A25 0%, #1E1A15 100%);
+}
+
+.instrument-visual.viola::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 35% 60% at 50% 25%, rgba(200, 148, 74, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 30% 55% at 50% 65%, rgba(200, 148, 74, 0.08) 0%, transparent 50%);
+}
+
+.instrument-visual.cello {
+  background:
+    radial-gradient(ellipse 50% 55% at 50% 25%, #3D2B1F 0%, transparent 70%),
+    linear-gradient(to bottom, #2E2A25 0%, #1E1A15 100%);
+}
+
+.instrument-visual.cello::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 38% 65% at 50% 20%, rgba(200, 148, 74, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 35% 60% at 50% 65%, rgba(200, 148, 74, 0.07) 0%, transparent 50%);
+}
+
+.instrument-name {
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.instrument-desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #9A8E7F;
+}
+
+/* --- Process --- */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+@media (max-width: 900px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+.process-step {
+  padding: 48px 0;
+  border-top: 1px solid #2E2A25;
+  transition: background-color 0.3s ease;
+}
+
+.process-step:first-child {
+  grid-column: 1;
+}
+
+@media (min-width: 901px) {
+  .process-step:nth-child(odd) {
+    padding-right: 80px;
+    border-right: 1px solid #2E2A25;
+  }
+  .process-step:nth-child(even) {
+    padding-left: 80px;
+  }
+}
+
+@media (max-width: 900px) {
+  .process-step {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.step-number {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #C8944A;
+  opacity: 0.5;
+  margin-bottom: 24px;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 16px;
+  color: #FFF8F0;
+}
+
+.step-desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #9A8E7F;
+  max-width: 440px;
+}
+
+/* --- Contact --- */
+.section-contact {
+  padding: 160px 0;
+  background: linear-gradient(to bottom, #1A1714, #1E1A15);
+}
+
+.contact-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #B8AA9A;
+  max-width: 600px;
+  margin-bottom: 64px;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+@media (max-width: 900px) {
+  .contact-links {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.contact-link-label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #C8944A;
+  margin-bottom: 12px;
+}
+
+.contact-link-value {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #FFF8F0;
+  line-height: 1.5;
+}
+
+.contact-link:hover .contact-link-value {
+  color: #C8944A;
+}
+
+.contact-link:focus-visible {
+  outline: 1px solid #C8944A;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* --- Footer --- */
+.footer {
+  padding: 64px 0;
+  border-top: 1px solid #2E2A25;
+}
+
+.footer-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #3A3530;
+  letter-spacing: 0.04em;
+}
+
+/* --- Scroll animations --- */
+.section-label,
+.section-title,
+.about-grid > *,
+.instrument-card,
+.process-step,
+.contact-intro,
+.contact-link {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-label.is-visible,
+.section-title.is-visible,
+.about-grid > *.is-visible,
+.instrument-card.is-visible,
+.process-step.is-visible,
+.contact-intro.is-visible,
+.contact-link.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays */
+.instrument-card:nth-child(1) { transition-delay: 0s; }
+.instrument-card:nth-child(2) { transition-delay: 0.15s; }
+.instrument-card:nth-child(3) { transition-delay: 0.3s; }
+
+.process-step:nth-child(1) { transition-delay: 0s; }
+.process-step:nth-child(2) { transition-delay: 0.12s; }
+.process-step:nth-child(3) { transition-delay: 0.24s; }
+.process-step:nth-child(4) { transition-delay: 0.36s; }
+
+/* ========================================
+   Sound Test — Interactive Instrument Player
+   ======================================== */
+
+/* Play Button */
+.sound-test-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  background: none;
+  border: 1px solid #3A3530;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #C8944A;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.sound-test-btn:hover {
+  border-color: #C8944A;
+  background-color: rgba(200, 148, 74, 0.06);
+}
+
+.sound-test-btn:focus-visible {
+  outline: 1px solid #C8944A;
+  outline-offset: 3px;
+}
+
+.play-icon {
+  flex-shrink: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sound-test-btn:hover .play-icon {
+  transform: scale(1.15);
+}
+
+/* Sound Player Overlay — fades in over the instrument-info area */
+.sound-player-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  z-index: 10;
+}
+
+.sound-player-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Background tint behind the player */
+.player-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 50% 45%, #2E2418 0%, transparent 70%),
+              linear-gradient(to bottom, #1E1A15 0%, #161310 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.sound-player-overlay.is-visible .player-bg {
+  opacity: 1;
+}
+
+/* Ripple container */
+.ripple-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 32px;
+}
+
+/* Concentric ripple rings */
+.ripple-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(200, 148, 74, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.4);
+  opacity: 0;
+}
+
+.sound-player-overlay.is-visible .ripple-ring {
+  animation: ripple-expand 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.ripple-ring:nth-child(1) {
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s !important;
+}
+.ripple-ring:nth-child(2) {
+  width: 90px;
+  height: 90px;
+  animation-delay: 0.3s !important;
+}
+.ripple-ring:nth-child(3) {
+  width: 120px;
+  height: 120px;
+  animation-delay: 0.6s !important;
+}
+.ripple-ring:nth-child(4) {
+  width: 150px;
+  height: 150px;
+  animation-delay: 0.9s !important;
+}
+
+@keyframes ripple-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0.6;
+    border-color: rgba(200, 148, 74, 0.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+    border-color: rgba(200, 148, 74, 0);
+  }
+}
+
+/* Center glow */
+.ripple-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(200, 148, 74, 0.35) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1.6); opacity: 0; }
+}
+
+/* Waveform bars */
+.waveform {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 48px;
+  margin-bottom: 24px;
+}
+
+.waveform-bar {
+  width: 3px;
+  background: linear-gradient(to top, #C8944A, #E0B56E);
+  border-radius: 2px;
+  opacity: 0.7;
+  animation: wave-animate 1.2s ease-in-out infinite alternate;
+}
+
+/* Stagger the waveform bars */
+.waveform-bar:nth-child(1)  { height: 12px; animation-delay: 0s; }
+.waveform-bar:nth-child(2)  { height: 24px; animation-delay: 0.1s; }
+.waveform-bar:nth-child(3)  { height: 36px; animation-delay: 0.2s; }
+.waveform-bar:nth-child(4)  { height: 44px; animation-delay: 0.3s; }
+.waveform-bar:nth-child(5)  { height: 48px; animation-delay: 0.15s; }
+.waveform-bar:nth-child(6)  { height: 40px; animation-delay: 0.25s; }
+.waveform-bar:nth-child(7)  { height: 32px; animation-delay: 0.35s; }
+.waveform-bar:nth-child(8)  { height: 46px; animation-delay: 0.1s; }
+.waveform-bar:nth-child(9)  { height: 38px; animation-delay: 0.2s; }
+.waveform-bar:nth-child(10) { height: 50px; animation-delay: 0.05s; }
+.waveform-bar:nth-child(11) { height: 42px; animation-delay: 0.3s; }
+.waveform-bar:nth-child(12) { height: 30px; animation-delay: 0.15s; }
+.waveform-bar:nth-child(13) { height: 48px; animation-delay: 0.25s; }
+.waveform-bar:nth-child(14) { height: 36px; animation-delay: 0.35s; }
+.waveform-bar:nth-child(15) { height: 28px; animation-delay: 0.2s; }
+.waveform-bar:nth-child(16) { height: 44px; animation-delay: 0.1s; }
+.waveform-bar:nth-child(17) { height: 34px; animation-delay: 0.3s; }
+.waveform-bar:nth-child(18) { height: 26px; animation-delay: 0.25s; }
+.waveform-bar:nth-child(19) { height: 38px; animation-delay: 0.15s; }
+.waveform-bar:nth-child(20) { height: 46px; animation-delay: 0.05s; }
+.waveform-bar:nth-child(21) { height: 32px; animation-delay: 0.2s; }
+.waveform-bar:nth-child(22) { height: 20px; animation-delay: 0.35s; }
+.waveform-bar:nth-child(23) { height: 14px; animation-delay: 0.3s; }
+
+@keyframes wave-animate {
+  0%   { transform: scaleY(0.3); opacity: 0.4; }
+  50%  { transform: scaleY(0.8); opacity: 0.7; }
+  100% { transform: scaleY(1.2); opacity: 1; }
+}
+
+/* Player info text */
+.player-info {
+  text-align: center;
+}
+
+.player-instrument-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #FFF8F0;
+  margin-bottom: 8px;
+}
+
+.player-freq {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #C8944A;
+  opacity: 0.6;
+}
+
+/* Close button */
+.player-close {
+  margin-top: 28px;
+  background: none;
+  border: 1px solid #3A3530;
+  border-radius: 3px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  color: #9A8E7F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.player-close:hover {
+  border-color: #C8944A;
+  color: #C8944A;
+}
+
+.player-close:focus-visible {
+  outline: 1px solid #C8944A;
+  outline-offset: 2px;
+}
+
+.player-close svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Fade-out / fade-in utility classes */
+.fade-out-element {
+  opacity: 0 !important;
+  transform: translateY(16px) scale(0.98);
+  transition: opacity 0.4s ease, transform 0.4s ease !important;
+  pointer-events: none;
+}
+
+.fade-in-element {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
+  pointer-events: auto !important;
+}
+
+/* Card active state */
+.instrument-card.is-playing {
+  position: relative;
+  border-top-color: #C8944A;
+}
+
+.instrument-card.is-playing .instrument-visual {
+  opacity: 0.3;
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .section-label,
+  .section-title,
+  .about-grid > *,
+  .instrument-card,
+  .process-step,
+  .contact-intro,
+  .contact-link {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  /* Disable ripple & waveform animations */
+  .ripple-ring,
+  .ripple-glow,
+  .waveform-bar {
+    animation: none !important;
+  }
+
+  .ripple-ring { opacity: 0.3; transform: translate(-50%, -50%) scale(1); border-color: rgba(200, 148, 74, 0.2); }
+  .ripple-glow { opacity: 0.3; }
+  .waveform-bar { opacity: 0.6; transform: scaleY(1); }
+}
+
+/* ========================================
+   Mobile Responsiveness — max 768px
+   ======================================== */
+
+@media (max-width: 768px) {
+  /* --- Header & Hamburger --- */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background-color: #F0E6D8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 1px;
+  }
+
+  /* Hamburger → X animation */
+  .hamburger.is-open .hamburger-line:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .hamburger.is-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.is-open .hamburger-line:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* Nav links mobile — slide-down panel */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    background-color: rgba(26, 23, 20, 0.97);
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  .nav-links.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    letter-spacing: 0.08em;
+    color: #F0E6D8;
+    padding: 8px 0;
+  }
+
+  /* Compact lang toggle for mobile */
+  .lang-toggle {
+    padding: 4px 10px;
+    border-width: 1px;
+    gap: 4px;
+  }
+
+  .lang-active,
+  .lang-inactive {
+    font-size: 0.65rem;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    margin-bottom: 24px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 36px;
+    line-height: 1.75;
+  }
+
+  .hero-cta {
+    padding: 14px 32px;
+    font-size: 0.75rem;
+  }
+
+  .hero-line {
+    bottom: 32px;
+    height: 60px;
+  }
+
+  /* --- Sections --- */
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    margin-bottom: 48px;
+  }
+
+  /* --- About --- */
+  .about-grid {
+    gap: 32px;
+  }
+
+  .about-details p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  /* --- Divider --- */
+  .divider {
+    padding: 0 24px;
+  }
+
+  /* --- Instruments --- */
+  .instruments-grid {
+    gap: 40px;
+  }
+
+  .instrument-visual {
+    aspect-ratio: 4 / 5;
+  }
+
+  .instrument-name {
+    font-size: 1.5rem;
+  }
+
+  .instrument-desc {
+    font-size: 0.9rem;
+  }
+
+  /* --- Process --- */
+  @media (min-width: 769px) {
+    .process-step:nth-child(odd) {
+      padding-right: 80px;
+      border-right: 1px solid #2E2A25;
+    }
+    .process-step:nth-child(even) {
+      padding-left: 80px;
+    }
+  }
+
+  .process-step {
+    padding: 32px 0;
+  }
+
+  @media (max-width: 768px) {
+    .process-step {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+      border-right: none !important;
+    }
+
+    .step-number {
+      font-size: 2.4rem;
+    }
+
+    .step-title {
+      font-size: 1.3rem;
+    }
+
+    .step-desc {
+      font-size: 0.9rem;
+      max-width: none;
+    }
+  }
+
+  /* --- Contact --- */
+  .contact-links {
+    gap: 32px;
+  }
+
+  .contact-link-value {
+    font-size: 1.15rem;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    padding: 48px 0;
+  }
+
+  /* --- Sound player mobile adjustments --- */
+  .ripple-container {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 24px;
+  }
+
+  .ripple-ring:nth-child(1) { width: 40px; height: 40px; }
+  .ripple-ring:nth-child(2) { width: 65px; height: 65px; }
+  .ripple-ring:nth-child(3) { width: 85px; height: 85px; }
+  .ripple-ring:nth-child(4) { width: 105px; height: 105px; }
+
+  .waveform {
+    height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .player-instrument-name {
+    font-size: 1.2rem;
+  }
+
+  .player-close {
+    width: 32px;
+    height: 32px;
+    margin-top: 24px;
+  }
+
+  /* --- Header mobile spacing --- */
+  .header {
+    padding: 16px 0;
+  }
+
+  .nav {
+    padding: 0 24px;
+    gap: 12px;
+  }
+
+  .nav-logo {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ========================================
+   Extra small screens — max 480px
+   ======================================== */
+
+@media (max-width: 480px) {
+  /* --- Typography --- */
+  body {
+    font-size: 15px;
+  }
+
+  .hero-title {
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* --- Sections --- */
+  .section {
+    padding: 64px 0;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  /* --- About --- */
+  .about-grid {
+    gap: 28px;
+  }
+
+  .about-details p {
+    font-size: 0.95rem;
+  }
+
+  /* --- Instruments --- */
+  .instruments-grid {
+    gap: 48px;
+  }
+
+  .instrument-visual {
+    aspect-ratio: 1 / 1.3;
+  }
+
+  .instrument-name {
+    font-size: 1.4rem;
+  }
+
+  .sound-test-btn {
+    display: flex !important;
+    padding: 12px 20px;
+    font-size: 0.75rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .play-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* --- Process --- */
+  .step-number {
+    font-size: 2rem;
+  }
+
+  .step-title {
+    font-size: 1.2rem;
+  }
+
+  .step-desc {
+    font-size: 0.85rem;
+  }
+
+  /* --- Contact --- */
+  .contact-links {
+    gap: 28px;
+  }
+
+  .contact-link-value {
+    font-size: 1.05rem;
+  }
+
+  /* --- Sound player XS --- */
+  .ripple-container {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+
+  .ripple-ring:nth-child(1) { width: 30px; height: 30px; }
+  .ripple-ring:nth-child(2) { width: 50px; height: 50px; }
+  .ripple-ring:nth-child(3) { width: 65px; height: 65px; }
+  .ripple-ring:nth-child(4) { width: 80px; height: 80px; }
+
+  .waveform {
+    height: 36px;
+    gap: 3px;
+  }
+
+  .waveform-bar { width: 2px; border-radius: 1px; }
+
+  .player-instrument-name {
+    font-size: 1.1rem;
+  }
+
+  .player-freq {
+    font-size: 0.65rem;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    padding: 36px 0;
+  }
+}
+
+
+/* ========================================
+   Very tall / narrow phones — min-height < 700px
+   ======================================== */
+
+@media (max-width: 768px) and (max-height: 700px) {
+  .hero {
+    min-height: auto;
+    padding: 120px 0 80px;
+  }
+
+  .hero-line {
+    display: none;
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+}
+
+
+/* ========================================
+   Landscape phones — wide short screens
+   ======================================== */
+
+@media (max-width: 1024px) and (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 80px 0 60px;
+  }
+
+  .hero-line {
+    display: none;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    margin-bottom: 32px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 6px 0;
+  }
+}
+
+
+/* ========================================
+   Landscape tablets — wider screens, tall content
+   ======================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+    padding: 0 32px;
+  }
+
+  .instruments-grid {
+    gap: 36px;
+  }
+
+  .contact-links {
+    gap: 36px;
+  }
+
+  .process-steps {
+    gap: 0;
+  }
+
+  @media (min-width: 769px) {
+    .process-step:nth-child(odd) {
+      padding-right: 48px;
+    }
+    .process-step:nth-child(even) {
+      padding-left: 48px;
+    }
+  }
+}
